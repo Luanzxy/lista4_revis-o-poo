@@ -54,7 +54,7 @@ class Pais:
     def __init__(self):
         self.__nome = ""
         self.__populacao = 0
-        self.__area = 0
+        self.__area = 0.00
     def set_nome(self,v):
         if v == "": raise ValueError("Você precisa informar algum nome")
         self.__nome = v
@@ -62,4 +62,27 @@ class Pais:
         if v < 0: raise ValueError(" A população não pode ser negativa")
         self.__populacao = v
     def set_area(self,v):
-        if v <= 0: raise ValueError("A área deve ser maior que 0")           
+        if v <= 0: raise ValueError("A área deve ser maior que 0")
+        self.__area = v
+    def get_nome(self):
+        return self.__nome
+    def get_populacao(self):
+        return self.__populacao
+    def get_area(self):
+        return self.__area
+    def densidade(self):
+        return self.__populacao / self.__area
+class ParcialUI:
+        @staticmethod
+        def menu():
+            op = int(input("informe uma opção: 1-Calcular, 2-Fim: "))
+            return op
+        def main():
+            op = 0
+            while op != 2:
+                op = ParcialUI.menu()
+                if op == 1 : 
+        
+
+        
+
