@@ -1,10 +1,10 @@
-class Viagem:
+'''class Viagem:
     def __init__(self):
         self.__destino = ""
         self.__distancia = 0
         self.__litros = 0
     def set_destino(self,v):
-            if v < (): raise ValueError("Você precisa informar algo")
+            if v < "": raise ValueError("Você precisa informar algo")
             self.__destino = v
     def set_distancia(self,v):
          if v < 0: raise ValueError("A distância não pode ser negativa")
@@ -23,17 +23,43 @@ class Viagem:
 class ViagemUI:
      @staticmethod
      def menu():
-         op = int(input("Informe uma opção: 1-Calcular, 2-Fim"))
+         op = int(input("Informe uma opção: 1-Calcular, 2-Fim: "))
          return op
      @staticmethod
      def main():
           op = 0
           while op != 2:
            op = ViagemUI.menu()
-           if op == 1: ViagemUI.menu()
+           if op == 1: ViagemUI.viagem()
      @staticmethod
      def viagem():
           x = Viagem()
-          
-                     
-           
+
+          x.set_destino(input("Informe o destino da viagem:"))
+
+          x.set_distancia(int(input("Informe a distância percorrida:")))
+
+          x.set_litros(int(input("Informe a quantidade de litros de gasolina gasto:")))
+
+          print(f"O consumo médio de combustível do automovel:{x.consumo():.2f} km/l")    
+
+ViagemUI.main()
+'''
+
+
+
+
+
+class Pais:
+    def __init__(self):
+        self.__nome = ""
+        self.__populacao = 0
+        self.__area = 0
+    def set_nome(self,v):
+        if v == "": raise ValueError("Você precisa informar algum nome")
+        self.__nome = v
+    def set_populacao(self,v):
+        if v < 0: raise ValueError(" A população não pode ser negativa")
+        self.__populacao = v
+    def set_area(self,v):
+        if v <= 0: raise ValueError("A área deve ser maior que 0")           
