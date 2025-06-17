@@ -77,11 +77,26 @@ class ParcialUI:
         def menu():
             op = int(input("informe uma opção: 1-Calcular, 2-Fim: "))
             return op
+        @staticmethod
         def main():
             op = 0
             while op != 2:
                 op = ParcialUI.menu()
-                if op == 1 : 
+                if op == 1 : ParcialUI.pais()
+        @staticmethod        
+        def pais():
+            x = Pais()
+
+            x.set_nome(input("Informe o nome do País:"))
+
+            x.set_populacao(int(input("Informe o número de habitantes:")))
+
+            x.set_area(int(input("Informe o número da área:")))
+
+            print(f" A densidade demográfica do País é: {x.densidade():.2f} de habitantes por km2") 
+
+
+ParcialUI.main()                   
         
 
         
